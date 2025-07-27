@@ -1,7 +1,7 @@
 [project]
-name = "htmx-portfolio"
+name = "caminatas"
 version = "0.1.0"
-description = "This is my baller portfolio"
+description = "Info-site for caminatas"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [

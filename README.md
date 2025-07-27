@@ -1,4 +1,4 @@
-### AI Categorizer
+### Caminatas
 
 1. Install uv (please install globally)
    ```
