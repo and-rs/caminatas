@@ -7,10 +7,6 @@
 
 2. install dependencies
    ```
-   uv pip install pyproject.toml
-   ```
-   or
-   ```
    uv sync
    ```
 
@@ -22,6 +18,13 @@
 4. Start the TailwindCSS CLI to update css in realtime
    ```
    uv run tailwind.py
+   ```
+
+### MISC
+
+1. Format `.jinja` files with djlint, on the `./templates` directory
+   ```
+   uv run djlint.py
    ```
 
 ### TODO
