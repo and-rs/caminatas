@@ -5,13 +5,13 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from app.config import DEBUG
 
-app = FastAPI(title="AI Categorizer")
+app = FastAPI(title="Caminatas")
 app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="app/templates")
+templates = Jinja2Templates(directory="templates")
 
 if DEBUG:
     hot_reload = arel.HotReload(
-        paths=[arel.Path("app/templates"), arel.Path("static/input.css")]
+        paths=[arel.Path("templates"), arel.Path("static/input.css")]
     )
 
     async def hot_reload_wrapper(websocket: WebSocket):
