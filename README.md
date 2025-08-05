@@ -35,3 +35,16 @@
 - [ ] autoreload tailwind stylesheet
 - [ ] integrate rustywind?
 - [x] jinja fragments (not necessary)
+
+### Sections TODO
+- [ ] About Us
+- [ ] Walks
+- [ ] Blog
+- [ ] Contact Us
+
+### Pages Examples
+https://www.volcanoadventures.com.co/
+https://www.tufuerzanatural.com/eventos
+https://www.roadtrip.travel/blog
+https://montanascolombianas.com/
+https://htmlrev.com/free-tailwind-templates.html#services

@@ -1,9 +1,9 @@
 import arel
-from fastapi import FastAPI, Request, WebSocket
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi import FastAPI, WebSocket
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from app.config import DEBUG
+from app.router.api import main
 
 app = FastAPI(title="Caminatas")
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -25,17 +25,4 @@ if DEBUG:
     templates.env.globals["DEBUG"] = True
     templates.env.globals["hot_reload"] = hot_reload
 
-
-@app.get("/", response_class=HTMLResponse)
-async def home_section(request: Request):
-    return templates.TemplateResponse("pages/home.jinja", {"request": request})
-
-
-@app.get("/about", response_class=HTMLResponse)
-async def about_section(request: Request):
-    return templates.TemplateResponse("pages/about.jinja", {"request": request})
-
-
-@app.get("/json", response_class=JSONResponse)
-async def json_example():
-    return {"Hello": "World"}
+app.include_router(main.mainRouter)
