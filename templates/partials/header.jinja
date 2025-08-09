@@ -1,35 +1,44 @@
 {% from 'components/btn_link.jinja' import btn_link %}
-{# <header class="fixed z-50 m-4 rounded-xl border min-w-lg bg-background/70 backdrop-blur">
-    <div class="flex flex-row justify-between items-center py-2 px-4 h-14">
-        <a class="text-xl font-medium hover:underline underline-offset-4">Company Name</a>
-        <div class="flex flex-row justify-center">
-            {{ btn_link(url="/", text="Home") }}
-            {{ btn_link(url="/about", text="About") }}
-            {{ btn_link(url="/categories", text="Categories") }}
-        </div>
+
+<header class="flex items-center justify-around py-12 h-16 w-full border-b border-gray-300">
+    <a href="/" class="text-2xl font-bold">Trepa Cerros</a>
+
+    <ul class="hidden md:flex gap-10">
+        <li class="relative inline-block group cursor-pointer">
+            <span class="text-lg font-medium">{{ btn_link(url="/about", text="Nosotros") }}</span>
+            <span
+              class="absolute left-0 bottom-0 w-0 h-0.5 bg-lime-500 transition-all duration-300 group-hover:w-full"
+            ></span>
+        </li>
+        <li class="relative inline-block group cursor-pointer">
+            <span class="text-lg font-medium">{{ btn_link(url="/walks", text="Destinos") }}</span>
+            <span
+              class="absolute left-0 bottom-0 w-0 h-0.5 bg-lime-500 transition-all duration-300 group-hover:w-full"
+            ></span>
+        </li>
+        <li class="relative inline-block group cursor-pointer">
+            <span class="text-lg font-medium">{{ btn_link(url="/blog", text="Blog") }}</span>
+            <span
+              class="absolute left-0 bottom-0 w-0 h-0.5 bg-lime-500 transition-all duration-300 group-hover:w-full"
+            ></span>
+        </li>
+    </ul>
+
+    <div class="flex gap-3">
+
+        <a href="https://www.instagram.com/trepacerros_col" target="_blank" class="bg-lime-200 p-2 w-13 h-13 flex items-center justify-center rounded-2xl hover:scale-110 transition-transform duration-300 ease-in-out shadow-xl/30">
+            <svg class="w-10 h-10">
+                <use xlink:href="../static/assets/sprite.svg#instagram"></use>
+            </svg>
+        </a>
+
+        <a href="https://www.example.com" target="_blank" class="bg-lime-200 p-2 w-13 h-13 flex items-center justify-center rounded-2xl hover:scale-110 transition-transform duration-300 ease-in-out shadow-xl/30">
+            <img src="../static/assets/tiktok.svg" />
+        </a>
+
+        <a href="https://www.example.com" target="_blank" class="bg-lime-200 p-2 w-13 h-13 flex items-center justify-center rounded-2xl hover:scale-110 transition-transform duration-300 ease-in-out shadow-xl/30">
+            <img src="../static/assets/whatsapp.svg" />
+        </a>
+
     </div>
-</header> #}
-<header class="fixed z-50 m-4 border w-full">
-    <section class="relative bg-teal-900">
-        <nav class="py-6">
-            <div class="container mx-auto px-4>
-                <div class="relative flex items-center justify-between">
-                    <a href="#" class="inline-block"> Company Name </a>
-
-                    <ul class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
-                        <li class="mr-8">
-                            {{ btn_link(url="/", text="Home") }}
-                        </li>
-                        <li class="mr-8">
-                            {{ btn_link(url="/about", text="About") }}
-                        </li>
-                        <li class="mr-8">
-                            {{ btn_link(url="/categories", text="Categories") }}
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-        </nav>
-    </section>
 </header>

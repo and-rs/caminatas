@@ -1,12 +1,20 @@
 {% extends 'base.jinja' %}
 {% block content %}
-    <section>
-        <div class="overflow-hidden relative m-4 rounded border aspect-video">
-            <span class="absolute px-2 text-6xl font-medium tracking-tighter h-36 bg-gradient-to-b from-40% to-transparent from-background">
-                Montaña y mente plena
-            </span>
-            <img class="object-cover top-0" src="/static/images/bg1.png" />
+    <div class="flex items-center justify-around w-full">
+        <div class="overflow-hidden rounded-3xl w-120 h-110">
+            <img src="/static/images/bg1.png" class="w-full h-full object-cover"/>
         </div>
 
-    </section>
+        <div class="p-4 flex flex-col items-center justify-center h-[calc(100vh-100px)] w-md text-center">
+            <span class="font-heading text-5xl xs:text-7xl xl:text-8xl tracking-tight font-semibold">Mente Plena y</span>
+            <span class="font-heading text-5xl xs:text-7xl xl:text-8xl tracking-tight mb-8 font-semibold text-green-900">Montaña</span>
+            <p class="text-lg text-gray-600 mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+            <a href="/walks" class="bg-green-900 text-white text-lg font-medium px-6 py-2 rounded-full hover:bg-lime-500 transition-colors duration-300 ease-in-out hover:text-black cursor-pointer">Ver Destinos</a>
+        </div>
+
+        <div class="overflow-hidden rounded-3xl w-120 h-110">
+            <img src="/static/images/forest.jpg" class="w-full h-full object-cover" />
+        </div>
+    </div>
+    
 {% endblock content %}

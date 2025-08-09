@@ -16,10 +16,14 @@ async def about_section(request: Request):
     return templates.TemplateResponse("pages/about.jinja", {"request": request})
 
 
-@mainRouter.get(path="/categories", response_class=HTMLResponse)
-async def categories_section(request: Request):
-    return templates.TemplateResponse("pages/categories.jinja", {"request": request})
+@mainRouter.get(path="/walks", response_class=HTMLResponse)
+async def walks_section(request: Request):
+    return templates.TemplateResponse("pages/walks.jinja", {"request": request})
 
+
+@mainRouter.get(path="/blog", response_class=HTMLResponse)
+async def blog_section(request: Request):
+    return templates.TemplateResponse("pages/blog.jinja", {"request": request})
 
 @mainRouter.get("/json", response_class=JSONResponse)
 async def json_example():
