@@ -1,6 +1,10 @@
 {% macro btn_link(text, url, hxTarget="#content") %}
-    <a class="inline-block text-black cursor-pointer font-medium"
-       hx-target="{{ hxTarget }}"
-       hx-push-url="true"
-       hx-get="{{ url }}">{{ text }}</a>
+    <div class="inline-block relative cursor-pointer group">
+        <a class="text-lg font-medium text-shadow-md"
+           hx-target="{{ hxTarget }}"
+           hx-push-url="true"
+           hx-get="{{ url }}">{{ text }}
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-primary"></span>
+        </a>
+    </div>
 {% endmacro %}

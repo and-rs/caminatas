@@ -34,7 +34,7 @@
             {{ hot_reload.script(url_for('hot-reload') ) | safe }}
         {% endif %}
     </head>
-    <body id="content" class="flex flex-col items-center w-full h-screen bg-orange-50">
+    <body id="content" class="flex flex-col items-center w-full h-screen">
         {% block header %}
             {% include "partials/header.jinja" %}
         {% endblock header %}
