@@ -1,5 +1,5 @@
 {% macro btn_link(text, url, hxTarget="#content") %}
-    <a class="btn-link"
+    <a class="inline-block text-black cursor-pointer font-medium"
        hx-target="{{ hxTarget }}"
        hx-push-url="true"
        hx-get="{{ url }}">{{ text }}</a>

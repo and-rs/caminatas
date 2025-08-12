@@ -26,12 +26,3 @@
    ```
    uv run djlint.py
    ```
-
-### TODO
-
-- [ ] fix hot-reload types (arel)
-- [ ] script for updating static dependencies
-- [ ] black, djlint and basedpyright pre-commit pipeline
-- [ ] autoreload tailwind stylesheet
-- [ ] integrate rustywind?
-- [x] jinja fragments (not necessary)

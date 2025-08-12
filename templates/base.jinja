@@ -34,19 +34,18 @@
             {{ hot_reload.script(url_for('hot-reload') ) | safe }}
         {% endif %}
     </head>
-    <body id="content"
-          class="flex flex-col items-center w-full h-full bg-background">
+    <body id="content" class="flex flex-col items-center w-full h-screen bg-orange-50">
         {% block header %}
             {% include "partials/header.jinja" %}
         {% endblock header %}
 
-        <main id="main" class="pt-16 w-full">
+        <main id="main">
             {% block content %}
             {% endblock content %}
-        </main>
 
-        {% block footer %}
-            {% include "partials/footer.jinja" %}
-        {% endblock footer %}
+            {% block footer %}
+                {% include "partials/footer.jinja" %}
+            {% endblock footer %}
+        </main>
     </body>
 </html>
