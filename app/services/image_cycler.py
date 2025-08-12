@@ -1,5 +1,7 @@
 def create_image_cycler():
     images = [
+        # "/static/images/carousel_img_1.avif",
+        # TODO: new optimized images
         "/static/images/bg1.png",
         "/static/images/forest.jpg",
         "/static/images/trail.jpg",
