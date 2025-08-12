@@ -1,7 +1,6 @@
 {% extends 'base.jinja' %}
 {% block content %}
     <div class="flex gap-4 justify-around items-center w-full">
-
         <div class="flex flex-col justify-center items-center p-4 mx-8 text-center h-[calc(100vh-100px)] w-md">
             <span class="text-5xl font-semibold tracking-tight xl:text-8xl font-heading xs:text-7xl">Mente Plena y</span>
             <span class="mb-8 text-5xl font-semibold tracking-tight text-green-900 xl:text-8xl font-heading xs:text-7xl">Montaña</span>
@@ -12,29 +11,10 @@
                class="py-2 px-6 text-lg font-medium text-white rounded-full transition-colors duration-300 ease-in-out cursor-pointer hover:text-black hover:bg-lime-500 bg-primary">Ver Destinos</a>
         </div>
 
-        <div class="overflow-hidden mx-8 rounded-3xl w-2xl h-110">
-            <img id="changeImage"
-                 src="/static/images/bg1.png"
-                 class="object-cover w-full h-full" />
-        </div>
-
-        <script>
-            const imgToChange = document.getElementById('changeImage');
-            const images = ['/static/images/bg1.png', '/static/images/forest.jpg', '/static/images/trail.jpg', '/static/images/trees.jpg'];
-            let currentIndex = 0;
-            
-            function changeImage() {
-                imgToChange.classList.add('opacity-0');
-                imgToChange.src = images[currentIndex];
-                currentIndex = (currentIndex + 1) % images.length;
-                setTimeout(() => {
-                    imgToChange.classList.remove('opacity-0');
-                }, 500);
-            }
-
-            setInterval(changeImage, 5000);
-        </script>
-
+        <div id="carousel"
+             hx-get="/carousel"
+             hx-trigger="load, every 3s"
+             hx-swap="innerHTML transition:true"
+             class="overflow-hidden mx-8 rounded-3xl w-2xl h-110"></div>
     </div>
-
 {% endblock content %}
