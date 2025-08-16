@@ -2,18 +2,15 @@
 {% from 'components/btn_icon.jinja' import btn_icon %}
 
 <header class="flex justify-around items-center py-12 w-full h-16 border-b border-gray-300">
-    <!-- Logo on the left -->
     <a href="/" class="text-2xl font-bold">Trepa Cerros</a>
 
-    <!-- Desktop Navigation (centered) -->
-    <div class="hidden md:flex gap-10">
+    <div class="hidden gap-10 md:flex">
         {{ btn_link(url="/about", text="Nosotros") }}
         {{ btn_link(url="/walks", text="Destinos") }}
         {{ btn_link(url="/blog", text="Blog") }}
     </div>
 
-    <!-- Desktop Social Icons (right) -->
-    <div class="hidden md:flex gap-3">
+    <div class="hidden gap-3 md:flex">
         {{ btn_icon(url="https://www.instagram.com/trepacerros_col",
                 aria="Instagram", icon_path="/static/assets/instagram.svg") }}
 
@@ -24,47 +21,19 @@
                 aria="WhatsApp", icon_path="/static/assets/whatsapp.svg") }}
     </div>
 
-    <!-- Mobile Menu Button (right side) -->
-    <div class="md:hidden relative group">
-        <button class="flex items-center justify-center w-10 h-10 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors duration-200">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-            <span class="sr-only">Menú</span>
-        </button>
+    <button class="flex justify-center items-center rounded-md transition-colors duration-200 sm:hidden size-10"
+            aria-controls="mobile-modal"
+            hx-get="/toggle-mobile-modal"
+            hx-target="#toggle-box"
+            hx-swap="innerHTML">
 
-        <!-- Mobile Sidebar Menu (appears on hover) -->
-        <div class="absolute right-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-            <div class="p-4">
-                <!-- Navigation Links -->
-                <div class="space-y-3 mb-6">
-                    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Menu</h3>
-                    <a href="/about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors">
-                        Nosotros
-                    </a>
-                    <a href="/walks" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors">
-                        Destinos
-                    </a>
-                    <a href="/blog" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors">
-                        Blog
-                    </a>
-                </div>
-                
-                <!-- Social Icons -->
-                <div class="border-t border-gray-200 pt-4">
-                    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Síguenos</h3>
-                    <div class="flex gap-3">
-                        {{ btn_icon(url="https://www.instagram.com/trepacerros_col",
-                                aria="Instagram", icon_path="/static/assets/instagram.svg") }}
+        <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <span class="sr-only">Menú</span>
+    </button>
 
-                        {{ btn_icon(url="https://.example.com",
-                                aria="TikTok", icon_path="/static/assets/tiktok.svg") }}
-
-                        {{ btn_icon(url="https://chat.whatsapp.com/L1fkyAW5Nd6KUGcdDyAY9D?mode=ac_t",
-                                aria="WhatsApp", icon_path="/static/assets/whatsapp.svg") }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% block mobile_modal %}
+        {% include "partials/mobile-modal.jinja" %}
+    {% endblock mobile_modal %}
 </header>
