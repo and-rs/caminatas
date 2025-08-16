@@ -1,0 +1,42 @@
+{% from 'components/btn_icon.jinja' import btn_icon %}
+
+{% if visible %}
+    <div id="toggle-box" class="relative md:hidden">
+
+        <div class="absolute right-0 top-full z-50 mt-2 w-64 rounded-lg border shadow-lg opacity-100 transition-all duration-300 bg-background"
+             aria-label="Menú móvil"
+             role="menu">
+            <div class="p-4">
+                <div class="mb-6 space-y-3">
+                    <h3 class="text-sm font-semibold tracking-wide uppercase">Menu</h3>
+
+                    <a href="/about"
+                       class="block py-2 px-3 text-base font-medium rounded-md transition-colors"
+                       role="menuitem">Nosotros</a>
+                    <a href="/walks"
+                       class="block py-2 px-3 text-base font-medium rounded-md transition-colors"
+                       role="menuitem">Destinos</a>
+                    <a href="/blog"
+                       class="block py-2 px-3 text-base font-medium rounded-md transition-colors"
+                       role="menuitem">Blog</a>
+                </div>
+
+                <div class="pt-4 border-t">
+                    <h3 class="mb-3 text-sm font-semibold tracking-wide uppercase">Síguenos</h3>
+                    <div class="flex gap-3">
+                        {{ btn_icon(url="https://www.instagram.com/trepacerros_col",
+                                                aria="Instagram", icon_path="/static/assets/instagram.svg") }}
+
+                        {{ btn_icon(url="https://.example.com",
+                                                aria="TikTok", icon_path="/static/assets/tiktok.svg") }}
+
+                        {{ btn_icon(url="https://chat.whatsapp.com/L1fkyAW5Nd6KUGcdDyAY9D?mode=ac_t",
+                                                aria="WhatsApp", icon_path="/static/assets/whatsapp.svg") }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div id="toggle-box"></div>
+{% endif %}

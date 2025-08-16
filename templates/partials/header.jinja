@@ -10,7 +10,7 @@
         {{ btn_link(url="/blog", text="Blog") }}
     </div>
 
-    <div class="flex gap-3">
+    <div class="hidden gap-3 md:flex">
         {{ btn_icon(url="https://www.instagram.com/trepacerros_col",
                 aria="Instagram", icon_path="/static/assets/instagram.svg") }}
 
@@ -20,4 +20,20 @@
         {{ btn_icon(url="https://chat.whatsapp.com/L1fkyAW5Nd6KUGcdDyAY9D?mode=ac_t",
                 aria="WhatsApp", icon_path="/static/assets/whatsapp.svg") }}
     </div>
+
+    <button class="flex justify-center items-center rounded-md transition-colors duration-200 sm:hidden size-10"
+            aria-controls="mobile-modal"
+            hx-get="/toggle-mobile-modal"
+            hx-target="#toggle-box"
+            hx-swap="innerHTML">
+
+        <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <span class="sr-only">Menú</span>
+    </button>
+
+    {% block mobile_modal %}
+        {% include "partials/mobile-modal.jinja" %}
+    {% endblock mobile_modal %}
 </header>

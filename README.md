@@ -34,3 +34,37 @@
    cjpeg -quality 80 -optimize -progressive -sample 2x2 -quant-table 3 -outfile output_q80.jpg input.jpg
    ```
 
+3. Generate requirements.txt for deployment
+   ```sh
+   uv export --no-emit-workspace --no-dev --no-annotate --no-header --no-hashes --output-file requirements.txt
+   ```
+
+### TODO
+
+1. Dev Ex
+   - [ ] rustywind, black, djlint and basedpyright pre-commit pipeline
+   - [ ] script for updating static dependencies (htmx)
+   - [ ] responsive design for main sections and components
+   - [ ] image optimization pipeline
+   - [ ] lazyloading pipeline
+   - [ ] lighthouse testing
+   - [ ] first deployment (railway)
+   - [ ] gzip middleware pipeline
+
+   - [x] autoreload tailwind stylesheet
+   - [x] mobile modal for header
+   - [x] first mockup
+
+2. Sections
+   - [ ] Home
+   - [ ] About Us
+   - [ ] Walks
+   - [ ] Blog
+
+### Page Examples
+
+- https://www.volcanoadventures.com.co/
+- https://www.tufuerzanatural.com/eventos
+- https://www.roadtrip.travel/blog
+- https://montanascolombianas.com/
+- https://htmlrev.com/free-tailwind-templates.html#services
