@@ -1,29 +1,14 @@
-from fastapi import APIRouter, Request, Response
+from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
+from app.config import templates
 from app.data.walks import walks
-from app.services.image_cycler import create_image_cycler
 
 router = APIRouter()
-
-templates = Jinja2Templates(directory="templates")
 
 
 @router.get("/", response_class=HTMLResponse)
 async def home_section(request: Request):
     return templates.TemplateResponse("pages/home.jinja", {"request": request})
-
-
-get_next_image = create_image_cycler()
-
-
-@router.get("/carousel", response_class=HTMLResponse)
-def carousel_fragment():
-    src = get_next_image()
-    return Response(
-        content=f'<img src="{src}" class="object-cover w-full h-full" loading="lazy">',
-        media_type="text/html",
-    )
 
 
 @router.get("/about", response_class=HTMLResponse)
