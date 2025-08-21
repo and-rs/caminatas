@@ -39,10 +39,10 @@
         <main id="main">
             {% block content %}
             {% endblock content %}
-
-            {% block footer %}
-                {% include "partials/footer.jinja" %}
-            {% endblock footer %}
         </main>
+
+        {% block footer %}
+            {% include "partials/footer.jinja" %}
+        {% endblock footer %}
     </body>
 </html>

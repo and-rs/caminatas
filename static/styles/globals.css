@@ -1,2 +1,16 @@
 @import "tailwindcss";
 @import "./theme.css";
+
+@layer utilities {
+  h1 {
+    @apply font-mono text-5xl font-semibold tracking-tighter;
+  }
+
+  h2 {
+    @apply text-base font-medium leading-6;
+  }
+
+  .btn-primary {
+    @apply transition-colors px-4 py-2 text-2xl rounded-lg text-primary-foreground bg-primary hover:bg-secondary;
+  }
+}

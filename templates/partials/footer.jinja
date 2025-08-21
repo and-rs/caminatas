@@ -1,8 +1,21 @@
-<footer class="flex flex-col justify-center items-center max-w-xl h-40 border-t text-center">
-    <p>
-        Made with love By <a href="https://github.com/davidperez95"
-    class="font-semibold text-teal-700 hover:underline">David Perez</a> and <a href="https://github.com/and-rs"
-    class="font-semibold text-teal-700 hover:underline">Andres Bautista</a> ❤️
-    </p>
-    <p>© {{ year }} Trepa Cerros. All rights reserved.</p>
+{% from 'components/btn_external.jinja' import btn_external %}
+
+<footer class="flex z-10 flex-col gap-4 p-4 mt-12 w-full bg-background">
+    <div class="py-4 w-full h-full rounded-2xl border border-foreground/20">
+        <div class="mx-auto space-y-4 w-fit">
+            <div class="flex flex-wrap gap-1 justify-center">
+                <span>Made with love by</span>
+                {{ btn_external(url="https://github.com/davidperez95", text="David Perez") }}
+                <span>and</span>
+                <span>
+                    {{ btn_external(url="https://github.com/and-rs", text="Andres Bautista") }}
+                    ❤️
+                </span>
+            </div>
+            <hr class="text-foreground/20" />
+            <div class="mx-auto leading-5 w-fit">
+                <p class="text-muted-foreground">© 2025 Trepa Cerros. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
 </footer>

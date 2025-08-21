@@ -1,0 +1,10 @@
+{% macro btn_external(text, url, class="font-medium leading-0") %}
+    <div class="inline-block relative cursor-pointer group">
+        <a class="{{ class }}"
+           href="{{ url }}"
+           target="_blank"
+           rel="noopener noreferrer">{{ text }}
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full bg-primary"></span>
+        </a>
+    </div>
+{% endmacro %}
