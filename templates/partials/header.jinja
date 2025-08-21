@@ -21,11 +21,11 @@
                 aria="WhatsApp", icon_path="/static/assets/whatsapp.svg") }}
     </div>
 
-    <button class="flex justify-center items-center rounded-md transition-colors duration-200 sm:hidden size-10"
+    <button class="flex justify-center items-center rounded-md transition-colors duration-200 md:hidden size-10"
             aria-controls="mobile-modal"
             hx-get="/toggle-mobile-modal"
             hx-target="#toggle-box"
-            hx-swap="innerHTML">
+            hx-swap="innerHTML transition:true">
 
         <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />

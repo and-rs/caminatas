@@ -1,11 +1,11 @@
 {% extends 'base.jinja' %}
 {% block content %}
-    <div class="flex gap-4 justify-around items-center w-full">
-        <div class="flex flex-col justify-center items-center p-4 mx-8 text-center h-[calc(100vh-100px)] w-md">
+    <div class="flex flex-col md:flex-row gap-4 justify-around items-center max-w-xl">
+        <div class="flex flex-col justify-center items-center p-4 mx-8 text-center h-[calc(100vh-100px)] w-md order-2 md:order-1">
             <span class="text-5xl font-semibold tracking-tight xl:text-8xl font-heading xs:text-7xl">Mente Plena y</span>
             <span class="mb-8 text-5xl font-semibold tracking-tight text-green-900 xl:text-8xl font-heading xs:text-7xl">Montaña</span>
             <p class="mb-10 text-lg text-muted-foreground text-balance">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+                En Trepa Cerros organizamos caminatas y travesías para quienes aman la montaña tanto como nosotros. Nos enfocamos en brindar experiencias seguras, grupales y transformadoras en contacto con la naturaleza.
             </p>
             <a href="/walks"
                class="py-2 px-6 text-lg font-medium text-white rounded-full transition-colors duration-300 ease-in-out cursor-pointer hover:text-black hover:bg-lime-500 bg-primary">Ver Destinos</a>
@@ -15,6 +15,6 @@
              hx-get="/carousel"
              hx-trigger="load, every 3s"
              hx-swap="innerHTML transition:true"
-             class="overflow-hidden mx-8 rounded-3xl w-2xl h-110"></div>
+             class="border border-red-500 overflow-hidden mx-8 rounded-3xl w-2xl h-110 order-1 md:order-2"></div>
     </div>
 {% endblock content %}

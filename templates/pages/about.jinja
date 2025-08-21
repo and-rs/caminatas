@@ -1,7 +1,38 @@
 {% extends 'base.jinja' %}
 {% block content %}
-    <div class="p-8 text-center">
-        <h1 class="mb-4 text-5xl font-bold">Nosotros</h1>
-        <h2 class="text-xl">¿Quiénes Somos?</h2>
+    <div class="flex flex-col justify-center items-center max-w-xl">
+        <div class="p-2 text-center">
+            <h1 class="mb-4 text-5xl font-bold">Nosotros</h1>
+            <h2 class="text-xl">¿Quiénes Somos?</h2>
+            <p class="text-lg text-muted-foreground text-balance">
+                Somos Trepa Cerros, amantes del trekking desde hace más de 20 años. Trepa Cerros nació del deseo de compartir la paz, el desafío y la conexión que sentimos cada vez que subimos una montaña.
+            </p>
+        </div>
+
+        <h1 class="mb-4 text-5xl font-bold">Conoce a Nuestro Equipo</h1>
+        <div class="flex justify-center items-center text-center gap-4">
+            <div>
+                <img src="./static/images/team/edwin.png" alt="Edwin">
+                <h2>Edwin</h2>
+                <p>Preparador físico y Experto en calistenia de Trepa Cerros</p>
+            </div>
+            <div>
+                <img src="./static/images/team/juanjo.png" alt="Juanjo">
+                <h2>Juanjo</h2>
+                <p>CEO y pionero en Trepa Cerros</p>
+            </div>
+            <div>
+                <img src="./static/images/team/caro.png" alt="Caro">
+                <h2>Caro</h2>
+                <p>Administradora y Directora Creativa en Trepa Cerros</p>
+            </div>
+        </div>
+
+        <div>
+            <h1 class="mb-4 text-5xl font-bold">¿Como Trabajamos?</h1>
+        </div>
+        <div>
+            <h1 class="mb-4 text-5xl font-bold">¿Porque Elegirnos?</h1>
+        </div>
     </div>
 {% endblock content %}

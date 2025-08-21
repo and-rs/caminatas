@@ -4,10 +4,10 @@ from fastapi.routing import APIRouter
 
 from app.config import templates
 
-router = APIRouter()
+router: APIRouter = APIRouter()
 
 
-CAROUSEL_IMAGES = [
+CAROUSEL_IMAGES: list[str] = [
     "/static/images/bg1.png",
     "/static/images/forest.jpg",
     "/static/images/trail.jpg",
@@ -15,8 +15,8 @@ CAROUSEL_IMAGES = [
 ]
 
 
-@router.get("/carousel", response_class=HTMLResponse)
-def carousel_fragment(request: Request):
+@router.get(path="/carousel", response_class=HTMLResponse)
+def carousel_fragment(request: Request) -> Response:
     current_index: int = request.session.get("image_index", 0)
     src: str = CAROUSEL_IMAGES[current_index]
     next_index: int = (current_index + 1) % len(CAROUSEL_IMAGES)
@@ -30,7 +30,7 @@ def carousel_fragment(request: Request):
 @router.get(path="/toggle-mobile-modal", response_class=HTMLResponse)
 async def toggle_sidebar(request: Request):
     current_visible: bool = request.session.get("mobile_menu_visible", False)
-    visible = not current_visible
+    visible: bool = not current_visible
     request.session["mobile_menu_visible"] = visible
     return templates.TemplateResponse(
         "partials/mobile-modal.jinja", {"request": request, "visible": visible}
