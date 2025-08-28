@@ -2,7 +2,7 @@
 {% from 'components/btn_icon.jinja' import btn_icon %}
 
 <header class="fixed top-0 z-10 p-4 w-full">
-    <div class="flex flex-row flex-wrap gap-3 justify-between items-center py-4 px-6 rounded-2xl sm:px-8 bg-background/80 backdrop-blur-2xl">
+    <div class="flex flex-row flex-wrap gap-3 justify-between items-center py-4 px-6 rounded-2xl sm:px-8 bg-background/80 backdrop-blur-2xl border border-foreground/20">
         {{ btn_link(url="/", text="Trepa Cerros", class="text-3xl font-medium tracking-tight") }}
 
         <div class="flex gap-10">
@@ -11,11 +11,9 @@
             {{ btn_link(url="/blog", text="Blog") }}
         </div>
 
-        <!-- <div class="hidden gap-3 md:flex"> -->
-        <!--     {{ btn_icon(url="https://www.instagram.com/trepacerros_col", aria="Instagram", icon_path="/static/assets/instagram.svg") }} -->
-        <!--     {{ btn_icon(url="https://.example.com", aria="TikTok", icon_path="/static/assets/tiktok.svg") }} -->
-        <!--     {{ btn_icon(url="https://chat.whatsapp.com/L1fkyAW5Nd6KUGcdDyAY9D?mode=ac_t", aria="WhatsApp", icon_path="/static/assets/whatsapp.svg") }} -->
-        <!-- </div> -->
+        <div class="hidden gap-3 md:flex">
+            {{ btn_link(text="Sign In", url="/")}}
+        </div>
 
         <!-- <button class="flex justify-center items-center rounded-md transition-colors duration-200 md:hidden size-10"
          -->
