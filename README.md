@@ -57,6 +57,12 @@
 
 2. Sections
    - [ ] Home
+     - [ ] hero (find better image)
+     - [ ] carousel
+     - [ ] benefits
+     - [ ] step-by-step for users
+     - [ ] upcoming events
+     - [ ] call to action (contact)
    - [ ] About Us
    - [ ] Walks
    - [ ] Blog

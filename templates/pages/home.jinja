@@ -1,20 +1,48 @@
+{% from 'components/btn_link.jinja' import btn_link %}
+{% from 'components/btn_icon.jinja' import btn_icon %}
+
 {% extends 'base.jinja' %}
 {% block content %}
-    <div class="flex gap-4 justify-around items-center w-full">
-        <div class="flex flex-col justify-center items-center p-4 mx-8 text-center h-[calc(100vh-100px)] w-md">
-            <span class="text-5xl font-semibold tracking-tight xl:text-8xl font-heading xs:text-7xl">Mente Plena y</span>
-            <span class="mb-8 text-5xl font-semibold tracking-tight text-green-900 xl:text-8xl font-heading xs:text-7xl">Montaña</span>
-            <p class="mb-10 text-lg text-muted-foreground text-balance">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+    <section class="relative w-full">
+
+        <img src="/static/images/forest.jpg"
+             class="object-cover w-screen h-screen"
+             loading="lazy">
+
+        <div class="absolute bottom-0 py-24 px-8 space-y-8 w-full to-95% from-40% via-80% via-background/50 bg-gradient-to-t to-transparent from-background">
+            <h1 class="text-foreground/90">Mente Plena y Montaña</h1>
+            <p class="max-w-3xl text-2xl">
+                En Trepa Cerros organizamos caminatas y travesías para quienes aman la montaña tanto como nosotros. Nos enfocamos en brindar experiencias seguras, grupales y transformadoras en contacto con la naturaleza.
             </p>
-            <a href="/walks"
-               class="py-2 px-6 text-lg font-medium text-white rounded-full transition-colors duration-300 ease-in-out cursor-pointer hover:text-black hover:bg-lime-500 bg-primary">Ver Destinos</a>
+            {{ btn_link(url="/walks", text="Ver Destinos", class="btn-primary", show_span=false) }}
+
+            <div class="flex gap-3">
+                {{ btn_icon(url="https://www.instagram.com/trepacerros_col", aria="Instagram", icon_path="/static/assets/instagram.svg") }}
+                {{ btn_icon(url="https://.example.com", aria="TikTok", icon_path="/static/assets/tiktok.svg") }}
+                {{ btn_icon(url="https://chat.whatsapp.com/L1fkyAW5Nd6KUGcdDyAY9D?mode=ac_t", aria="WhatsApp", icon_path="/static/assets/whatsapp.svg") }}
+            </div>
         </div>
 
-        <div id="carousel"
-             hx-get="/carousel"
-             hx-trigger="load, every 3s"
-             hx-swap="innerHTML transition:true"
-             class="overflow-hidden mx-8 rounded-3xl w-2xl h-110"></div>
-    </div>
+        <!-- <div id="carousel" -->
+        <!--      hx-get="/carousel" -->
+        <!--      hx-trigger="load, every 1s" -->
+        <!--      hx-swap="innerHTML" -->
+        <!--      class="overflow-hidden w-full h-screen border-2 border-red-400 aspect-video"> -->
+        <!-- </div> -->
+
+        <div id="carousel">
+        </div>
+
+        <div id="benefits">
+        </div>
+
+        <div id="steps">
+        </div>
+
+        <div id="events">
+        </div>  
+
+        <div id="contact">
+        </div>
+    </section>
 {% endblock content %}

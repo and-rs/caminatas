@@ -1,19 +1,46 @@
 {% extends 'base.jinja' %}
 
 {% block content %}
-    <div class="flex flex-col justify-center items-center w-full h-content">
+    <div class="flex flex-col justify-center items-center max-w-xl h-content">
 
         {% for walk in walks %}
-            <div class="flex flex-col pb-8 border-b border-gray-300">
+            <div class="flex flex-col pb-8">
 
-                <div class="flex gap-16 justify-around items-center py-16 px-8">
+                <div class="flex gap-16 justify-around items-center py-8 px-8">
                     <h1 class="pl-8 text-5xl font-bold">{{ walk.name }}</h1>
                     <p class="px-8 text-balance">{{ walk.description }}</p>
                 </div>
 
-                <div class="flex justify-around items-center">
+                <div class="grid grid-cols-3 gap-8 py-8 px-8">
+                    <div class="flex flex-col items-center text-center">
+                        <h2 class="mb-2 font-semibold">Duración</h2>
+                        <p class="text-balance">{{ walk.info.duration }}</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <h2 class="mb-2 font-semibold">Distancia</h2>
+                        <p class="text-balance">{{ walk.info.length }}</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <h2 class="mb-2 font-semibold">Dificultad</h2>
+                        <p class="text-balance">{{ walk.info.difficulty }}</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <h2 class="mb-2 font-semibold">Altitud</h2>
+                        <p class="text-balance">{{ walk.info.height }}</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <h2 class="mb-2 font-semibold">Ascenso</h2>
+                        <p class="text-balance">{{ walk.info.elevation }}</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <h2 class="mb-2 font-semibold">Precio</h2>
+                        <p class="text-balance">{{ walk.info.price }}</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 justify-around items-center">
                     {% for image in walk.images %}
-                        <div class="overflow-hidden rounded-3xl w-110 h-110">
+                        <div class="overflow-hidden w-96 h-96 rounded-3xl">
                             <img src={{ image }} alt="Sutatausa" class="object-cover w-full h-full">
                         </div>
                     {% endfor %}
@@ -24,4 +51,3 @@
 
     </div>
 {% endblock content %}
-
