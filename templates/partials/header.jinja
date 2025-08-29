@@ -2,17 +2,14 @@
 {% from 'components/btn_icon.jinja' import btn_icon %}
 
 <header class="fixed top-0 z-10 p-4 w-full">
-    <div class="flex flex-row flex-wrap gap-3 justify-between items-center py-4 px-6 rounded-2xl sm:px-8 bg-background/80 backdrop-blur-2xl border border-foreground/20">
+    <div class="flex flex-row flex-wrap gap-3 justify-between items-center py-4 px-6 rounded-2xl border sm:px-8 bg-background/80 backdrop-blur-2xl border-foreground/20">
         {{ btn_link(url="/", text="Trepa Cerros", class="text-3xl font-medium tracking-tight") }}
 
         <div class="flex gap-10">
             {{ btn_link(url="/about", text="Nosotros") }}
             {{ btn_link(url="/walks", text="Destinos") }}
             {{ btn_link(url="/blog", text="Blog") }}
-        </div>
-
-        <div class="hidden gap-3 md:flex">
-            {{ btn_link(text="Sign In", url="/")}}
+            {{ btn_link(text="Iniciar Sesión", url="/") }}
         </div>
 
         <!-- <button class="flex justify-center items-center rounded-md transition-colors duration-200 md:hidden size-10"
